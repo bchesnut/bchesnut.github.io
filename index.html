@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Basic 1</title>
+<link rel="stylesheet" href="css/basic.css"/>
+</head>
+
+<body>
+
+<div>
+<input type="text" id="entry1" placeholder="Enter a number">
+<input type="button" id="calculate" value="Calculate">
+</div>
+
+<div>
+The result is: <span id="result"></span>
+</div>
+
+<script src="js/jquery-1.8.1.js"></script>
+
+<script type="text/javascript">
+$(function(){
+
+    // Click response
+    $('#calculate').click(function(){
+        var calc = $('#entry1').val();
+        if ($.isNumeric(calc)) {
+            calc = calc * 13;
+            $('#result').html(calc);
+        } else {
+            $('#entry1').val("");
+            $('#entry1').attr("placeholder", "Enter a NUMBER");
+        }
+        return false;
+   });
+});
+
+</script>
+
+</body>
+</html>
